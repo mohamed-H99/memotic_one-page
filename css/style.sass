@@ -1,0 +1,187 @@
+@import 'config'
+// main styles
+body
+  min-height: 3000px
+  line-height: 1.7
+
+
+#main-header
+  .header-line
+    background-color: $main-c
+    color: #fff
+  #main-nav
+    & > div
+      justify-content: space-between
+      align-items: center
+    #brand
+      &:after
+        content: ''
+        display: inline-block
+        width: 1.5rem
+        height: 4px
+        background-color: $main-c
+    .nav-list
+      li
+        a
+          padding: 1.5rem 1rem
+          position: relative
+          transition: all $ts
+          &:before
+            content: ''
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
+            height: 100%
+            width: 0%
+            background-color: $main-c
+            z-index: -1
+            transition: all $ts
+          &:hover:before
+            width: 100%
+          &:hover
+            color: #fff
+  #showcase
+    & > div
+      min-height: 300px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      h1
+        text-shadow: 10px 10px 0px rgba(0,0,0,0.1)
+      .group-input
+        position: relative
+        i
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          left: 1rem
+          color: $main-c
+        input
+          width: 100%
+          height: 100%
+          padding-left: 3rem
+        
+#pricing
+  .items
+    grid-template-columns: 1fr 1fr
+    gap: 2rem
+    .item
+      &:first-child
+        background-color: #fff
+      &:last-child
+        background-color: $dark-c
+        color: #fff
+      border-radius: $rad
+      padding: 2rem
+      .price
+        font-size: 2.5rem
+        color: $main-c
+        & + p
+          filter: brightness(200%)
+      ul
+        text-align: left
+        margin: 1rem 0
+        li
+          margin: 0.5rem 0
+          i
+            margin-right: 0.5rem
+            color: $thd-c
+
+#compare
+  p.upper
+    color: $main-c
+  table
+    width: 100%
+    border-radius: $rad
+    background-color: #fff
+    tr
+      td:nth-child(n + 2)
+        text-align: center
+        .btn
+          i
+            color: #fff
+        i
+          color: $main-c
+
+    td, th
+      border: 1px solid $gray-c
+      padding: 0.5rem 1rem
+    .main-r
+      width: 100%
+      background-color: $dark-c
+      color: #fff
+
+.line-break
+  width: 100%
+  height: 2px
+  background-color: $gray-c
+
+#faq
+  .faq-boxes
+    li
+      margin: 1rem 0
+      .text-line
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 0.5rem
+        font-size: 1.3rem
+        cursor: pointer
+        transition: all $ts
+        &:hover
+          filter: brightness(175%)
+        p
+          font-weight: bold
+          pointer-events: none;
+        i
+          pointer-events: none
+      .content
+        position: relative
+        overflow: hidden
+        height: 0px
+        transition: all $ts
+
+#contact
+  .group-input
+    position: relative
+    width: 70%
+    height: 50px
+    margin: auto
+    input
+      width: 100%
+      height: 100%
+      padding-right: 30%
+      // font-family: $main-f
+      // color: $dark-c
+      font-size: 1.1rem
+    .btn
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      right: 0
+
+#main-footer
+  .items
+    grid-template-columns: repeat(5, 1fr)
+    gap: 2rem
+    .item
+      ul
+        li.head
+          font-weight: bold
+          font-size: 1.2rem
+          margin-bottom: 1rem
+        li
+          margin-bottom: 0.5rem
+        ul.social-links
+          li a
+            i
+              font-size: 1.2rem
+              margin: 0 0.3rem
+  .footer-line
+    width: 100%
+    margin-top: 4rem
+
+// Media Queries at The End
+@import 'mobile'
